@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before {
+		box-sizing: border-box;
+}
+
+body {
+		margin: 0;
+		background: whitesmoke;
+		width: 100vw;
+		height: 100vh;
+}
+
+section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+}
+
+.heading {
+		padding: 0 1em;
+}
+
+.heading > h1, .heading > p {
+		text-align: center;
+}
+
+section .heading > h1 {
+		font-size: clamp(2.1em, 3.5vw, 6em);
+}
+
+section .heading > p {
+		font-size: clamp(1em, 3vw, 1.4em);
+}
+
+.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, auto-fit);
+		place-items: center;
+}
+
+/*image container*/
+.image {
+		margin-inline: auto;
+		text-align: center;
+		padding: 1em;
+}
+
+img {
+		width: 100%;
+		height: 50%;
+		border-radius: 2%;
+}
+
+.article {
+		display: grid;
+		grid-template-columns: 1fr;
+		text-transform: capitalize;
+}
+
+.btn-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		width: 100%;
+		text-align: center;
+}
+
+.btn-container > button {
+		outline: none;
+		border: none;
+		background: grey;
+		padding: 0.7em 1em;
+		font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: white;
+		transition: color 500ms ease-in-out, font-weight 500ms ease-in-out, border 500ms ease-in-out;
+}
+
+.btn-container > button:hover,
+.btn-container > button:focus {
+		color: #00d5ff;
+		background: lavender;
+}
+
+.description {
+		background: #fff;
+}
+
+/*by default all the articles will be hidden*/
+.description > div {
+		padding: 0 1.5em;
+		opacity: 0;
+		pointer-events: none;
+		height: 0;
+		overflow: hidden;
+		transform: translateY(-20%);
+		transition: all 400ms ease-in-out;
+}
+
+.description > div > h2 {
+		font-size: clamp(1.5rem, 3vw, 4rem);
+		letter-spacing: 1px;
+}
+
+.description > div p {
+		font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
+}
+
+/*to show one article all the time*/
+.description > div.active {
+		background: white;
+		opacity: 1;
+		overflow: visible;
+		pointer-events: auto;
+		transform: translateY(0);
+		height: auto;
+}
+
+/* border hover effect will only appear if button have active class*/
+.btn-container > button.active {
+		background: #fff;
+		font-weight: bold;
+		color: #000;
+		border: 2px solid #2aabff;
+}
+
+@media screen and (min-width: 64em){
+section {
+		display: flex;
+		height: 100%;
+		}
+
+.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		place-items: center;
+		}
+		
+.description {
+		height: 280px;
+}        
+}
