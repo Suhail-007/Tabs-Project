@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 *,
 *::after,
 *::before {
@@ -20,6 +22,7 @@ section {
 
 .heading {
 		padding: 0 1em;
+		font-family: 'Josefin Sans', sans-serif;
 }
 
 .heading > h1, .heading > p {
@@ -36,22 +39,58 @@ section .heading > p {
 
 .container {
 		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, auto-fit);
+	 grid-template-columns: 1fr;
+	 grid-template-rows: repeat(2, auto-fit);
 		place-items: center;
 }
 
 /*image container*/
 .image {
-		margin-inline: auto;
-		text-align: center;
-		padding: 1em;
+		position: relative;
+		padding: 1em 0.5em;
+		width: 100%;
+		height: 100%;		
 }
 
 img {
 		width: 100%;
-		height: 50%;
+		height: 100%;
 		border-radius: 2%;
+}
+
+.carousel-btn-container {
+		position: absolute;
+		top: 50%;
+		right: 1.8%;
+		left: 1.8%;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+}
+
+.carousel-btn-container button {
+		background: none;
+		border: none;
+		outline: none;
+		background-color: rgba(0,0,0,0.5);
+		color: #fff;
+		padding: 0.5em 0.3em;
+		font-size: clamp(2rem, 0.96rem + 0.192vw, 4rem);
+		transition: 300,ms ease-in-out;
+}
+
+.carousel-btn-container button:hover {
+		background: rgba(0,0,0,1);
+}
+
+button[data-carousel-prev] {
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 10px;
+}
+
+button[data-carousel-next] {
+		border-bottom-left-radius: 10px;
+		border-top-left-radius: 10px;
 }
 
 .article {
@@ -73,6 +112,7 @@ img {
 		background: grey;
 		padding: 0.7em 1em;
 		font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
+		font-family: 'Josefin Sans', sans-serif;		
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		color: white;
@@ -87,6 +127,7 @@ img {
 
 .description {
 		background: #fff;
+		font-family: 'Times New Roman, sans-serif';
 }
 
 /*by default all the articles will be hidden*/
@@ -102,6 +143,7 @@ img {
 
 .description > div > h2 {
 		font-size: clamp(1.5rem, 3vw, 4rem);
+		font-family: 'Josefin Sans', sans-serif;
 		letter-spacing: 1px;
 }
 
@@ -134,11 +176,17 @@ section {
 		}
 
 .container {
-		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
+		grid-template-rows: 500px;
 		place-items: center;
 		}
+	
+	/*image container*/
+.image {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+}
 		
 .description {
 		height: 280px;
