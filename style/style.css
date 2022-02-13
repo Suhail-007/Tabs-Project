@@ -49,7 +49,8 @@ section .heading > p {
 		position: relative;
 		padding: 1em 0.5em;
 		width: 100%;
-		height: 100%;		
+		height: 100%;
+		opacity: 0;
 }
 
 img {
@@ -121,8 +122,8 @@ button[data-carousel-next] {
 
 .btn-container > button:hover,
 .btn-container > button:focus {
-		color: #00d5ff;
-		background: lavender;
+		color: #00d55f;
+		background: whitesmoke;
 }
 
 .description {

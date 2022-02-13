@@ -37,10 +37,34 @@ const image = document.querySelector('.image > img');
 
 window.addEventListener('DOMContentLoaded', () => {
 		changeInfo(index);
+		animateImages();
+		animateElement(historyPara);
 })
 
 //carousel Function
 let index = 0;
+
+function animateImages() {
+		image.parentElement.animate([
+				{opacity: 0},
+				{opacity: 1}
+		],
+		{
+				duration: 700,
+				fill: 'forwards',
+		})
+}
+
+function animateElement(ele) {
+		ele.parentElement.animate([
+				{opacity: 0},
+				{opacity: 1}
+		],
+		{
+				duration: 700,
+				fill: 'forwards',
+		})
+}
 
 function changeInfo(i) {	
 	let newIndex = description[i];
@@ -49,6 +73,7 @@ function changeInfo(i) {
 	historyPara.innerText = newIndex.history;
 	visionPara.innerHTML = newIndex.vision;
 	aboutPara.innerText = newIndex.about;
+
 }
 
 let carouselNextBtn = document.querySelector('[data-carousel-next]');
@@ -58,12 +83,20 @@ let carouselPrevBtn = document.querySelector('[data-carousel-prev]');
 carouselNextBtn.addEventListener('click', () => {
 		index++;
 		if (index > description.length - 1) 	index = 0;
+		animateImages();
+		animateElement(historyPara);
+		animateElement(visionPara);
+		animateElement(aboutPara);
 		changeInfo(index);
 });
 
 carouselPrevBtn.addEventListener('click', () => {
 		index--;
 		if (index < 0) index = description.length - 1;
+		animateImages();
+		animateElement(historyPara);
+		animateElement(visionPara);
+		animateElement(aboutPara);
 		changeInfo(index);
 });
 //carousel Function end
@@ -88,5 +121,5 @@ articleContainer.addEventListener('click', e => {
 		//select element
 		const element = document.getElementById(btnDataset);
 		element.classList.add('active');
-		}				
+		}	
 })
