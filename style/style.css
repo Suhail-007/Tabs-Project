@@ -3,193 +3,193 @@
 *,
 *::after,
 *::before {
-		box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-		margin: 0;
-		background: whitesmoke;
-		width: 100vw;
-		height: 100vh;
+  margin: 0;
+  background: whitesmoke;
+  min-height: 100vh;
 }
 
 section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
-		padding: 0 1em;
-		font-family: 'Josefin Sans', sans-serif;
+  padding: 0 1em;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.heading > h1, .heading > p {
-		text-align: center;
+.heading>h1,
+.heading>p {
+  text-align: center;
 }
 
-section .heading > h1 {
-		font-size: clamp(2.1em, 3.5vw, 6em);
+section .heading>h1 {
+  font-size: clamp(2.1em, 3.5vw, 6em);
 }
 
-section .heading > p {
-		font-size: clamp(1em, 3vw, 1.4em);
+section .heading>p {
+  font-size: clamp(1em, 3vw, 1.4em);
 }
 
 .container {
-		display: grid;
-	 grid-template-columns: 1fr;
-	 grid-template-rows: repeat(2, auto-fit);
-		place-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto-fit);
+  place-items: center;
 }
 
 /*image container*/
 .image {
-		position: relative;
-		padding: 1em 0.5em;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
+  position: relative;
+  padding: 1em 0.5em;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
 }
 
 img {
-		width: 100%;
-		height: 100%;
-		border-radius: 2%;
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
 }
 
 .carousel-btn-container {
-		position: absolute;
-		top: 50%;
-		right: 1.8%;
-		left: 1.8%;
-		transform: translateY(-50%);
-		display: flex;
-		justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  right: 1.8%;
+  left: 1.8%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
 
 .carousel-btn-container button {
-		background: none;
-		border: none;
-		outline: none;
-		background-color: rgba(0,0,0,0.5);
-		color: #fff;
-		padding: 0.5em 0.3em;
-		font-size: clamp(2rem, 0.96rem + 0.192vw, 4rem);
-		transition: 300,ms ease-in-out;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0.5em 0.3em;
+  font-size: clamp(2rem, 0.96rem + 0.192vw, 4rem);
+  transition: 300, ms ease-in-out;
 }
 
 .carousel-btn-container button:hover {
-		background: rgba(0,0,0,1);
+  background: rgba(0, 0, 0, 1);
 }
 
-button[data-carousel-prev] {
-		border-bottom-right-radius: 10px;
-		border-top-right-radius: 10px;
+button[data-carousel-btn='prev'] {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-button[data-carousel-next] {
-		border-bottom-left-radius: 10px;
-		border-top-left-radius: 10px;
+button[data-carousel-btn='next'] {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .article {
-		display: grid;
-		grid-template-columns: 1fr;
-		text-transform: capitalize;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-transform: capitalize;
 }
 
 .btn-container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		width: 100%;
-		text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  text-align: center;
 }
 
-.btn-container > button {
-		outline: none;
-		border: none;
-		background: grey;
-		padding: 0.7em 1em;
-		font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
-		font-family: 'Josefin Sans', sans-serif;		
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		color: white;
-		transition: color 500ms ease-in-out, font-weight 500ms ease-in-out, border 500ms ease-in-out;
+.btn-container>button {
+  outline: none;
+  border: none;
+  background: grey;
+  padding: 0.7em 1em;
+  font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  transition: color 500ms ease-in-out, font-weight 500ms ease-in-out, border 500ms ease-in-out;
 }
 
-.btn-container > button:hover,
-.btn-container > button:focus {
-		color: #00d55f;
-		background: whitesmoke;
+.btn-container>button:hover,
+.btn-container>button:focus {
+  color: #00d55f;
+  background: whitesmoke;
 }
 
 .description {
-		background: #fff;
-		font-family: 'Times New Roman, sans-serif';
+  background: #fff;
+  font-family: 'Times New Roman, sans-serif';
 }
 
 /*by default all the articles will be hidden*/
-.description > div {
-		padding: 0 1.5em;
-		opacity: 0;
-		pointer-events: none;
-		height: 0;
-		overflow: hidden;
-		transform: translateY(-20%);
-		transition: all 400ms ease-in-out;
+.description>div {
+  padding: 0 1.5em;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(-20%);
+  transition: all 400ms ease-in-out;
 }
 
-.description > div > h2 {
-		font-size: clamp(1.5rem, 3vw, 4rem);
-		font-family: 'Josefin Sans', sans-serif;
-		letter-spacing: 1px;
+.description>div>h2 {
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 1px;
 }
 
-.description > div p {
-		font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
+.description>div p {
+  font-size: clamp(1rem, 0.96rem + 0.192vw, 1.25rem);
 }
 
 /*to show one article all the time*/
-.description > div.active {
-		background: white;
-		opacity: 1;
-		overflow: visible;
-		pointer-events: auto;
-		transform: translateY(0);
-		height: auto;
+.description>div.active {
+  background: white;
+  opacity: 1;
+  overflow: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  height: auto;
 }
 
 /* border hover effect will only appear if button have active class*/
-.btn-container > button.active {
-		background: #fff;
-		font-weight: bold;
-		color: #000;
-		border: 2px solid #2aabff;
+.btn-container>button.active {
+  background: #fff;
+  font-weight: bold;
+  color: #000;
+  border: 2px solid #2aabff;
 }
 
-@media screen and (min-width: 64em){
-section {
-		display: flex;
-		height: 100%;
-		}
+@media screen and (min-width: 64em) {
+  section {
+    display: flex;
+    height: 100%;
+  }
 
-.container {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 500px;
-		place-items: center;
-		}
-	
-	/*image container*/
-.image {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-}
-		
-.description {
-		height: 280px;
-}        
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px;
+    place-items: center;
+  }
+
+  /*image container*/
+  .image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .description {
+    height: 280px;
+  }
 }
