@@ -43,9 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 carouselBtnsCont.addEventListener('click', e => {
   const btn = e.target.closest('button').dataset.carouselBtn;
-  
   if (btn === 'next') {
-    if (index >= description.length-1) index = 0;
+    if (index >= description.length - 1) index = 0;
     index++;
   }
   if (btn === 'prev') {
@@ -56,7 +55,6 @@ carouselBtnsCont.addEventListener('click', e => {
 })
 
 const changeInfo = function(index) {
-  console.log(index);
   const { image, history, vision, about } = description[index];
   historyPara.textContent = history;
   imageElem.src = image;
